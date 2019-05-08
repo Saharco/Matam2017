@@ -1,0 +1,22 @@
+#!/bin/bash
+threshold=${3}
+curr_time=-1
+IDs=$(sort -nk2 ${1}/visitors.txt | grep -w ${2} | cut -d" " -f2)
+cd ${1}/challenges
+chg_files="$(ls | grep .chg)"
+for id in ${IDs} ; do
+	for challenge in ${chg_files}; do
+		temp_id=$(head -1 ${challenge} | cut -d":" -f2)
+		if (( temp_id==id )) ; then
+			curr_time=$(head -2 ${challenge} | tail -1 | cut -d":" -f2)
+		fi
+	done
+	if (( curr_time != -1 )) ; then
+		if (( curr_time<threshold )) ; then
+			echo ${id} Winner
+		else
+			echo ${id} Loser
+		fi
+	fi
+done
+cd ../..

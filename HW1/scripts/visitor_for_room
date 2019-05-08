@@ -1,0 +1,7 @@
+#!/bin/bash
+#This script gets the name of an escape room in the MTM-ESCAPY network
+#and a visitor's name, and displays the the latest visits that
+#the visitor had in that room. NOTE: case-sensitive, different people
+#with the exact same name are considered the same person.
+room="${1}"
+grep -w ${2} ${room}/visitors.txt | cut -d" " -f1-2 | sort -nk2

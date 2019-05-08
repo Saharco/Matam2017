@@ -1,0 +1,15 @@
+#!/bin/bash
+#runs the command specified in $1 with parameters $2,$3,...
+#But first:
+# * Adds to PATH the directory containing this script.
+# * Adds LC_ALL variable in order to sort according to POSIX standarts. solves a problem of not sorting well alphabetically.
+# * Adds execution permissions to all files in the directory containing this script.
+
+SCRIPT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+export LC_ALL=C
+export LANG=C
+export PATH="${PATH}:${SCRIPT_DIR}"
+chmod u+x "$SCRIPT_DIR/"*
+
+"$@"

@@ -1,0 +1,3 @@
+cd MainDirectories/MTMEscapyV3
+# Names of escape rooms that does not appear in the files as visitor names
+mtm_escapy_challenges 45 mentality mistery novisitors

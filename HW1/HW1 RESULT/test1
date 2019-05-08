@@ -1,0 +1,3 @@
+#!/bin/bash
+cd MainDirectories/MTMEscapy
+last_visitors runaway 2

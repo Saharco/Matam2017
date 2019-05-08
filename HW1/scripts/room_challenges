@@ -1,0 +1,16 @@
+#!/bin/bash
+visitors_list="$(last_visitors ${1} | sort)"
+challenges_array=( 0 )
+challenges=0
+wins=0
+index=0
+for name in $visitors_list; do
+	challenges=$(visitor_challenges ${1} ${name} ${2} | wc -l)
+	wins=$(visitor_challenges ${1} ${name} ${2} | grep -c Winner)
+	losses=$(visitor_challenges ${1} ${name} ${2} | grep -c Loser)
+	total=$(visitor_challenges ${1} ${name} ${2} | wc -l)
+	element=$(printf "%s %s %s %s" $name $wins $losses $total)
+	challenges_array[index]="$element"
+	let index++
+done
+printf "%s %s %s %s\n" ${challenges_array[*]} | sort -nrsk4 | cut -d" " -f1-3

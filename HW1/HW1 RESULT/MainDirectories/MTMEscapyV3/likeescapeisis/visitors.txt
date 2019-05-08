@@ -1,0 +1,14 @@
+90 23 roi
+80 63 Moshe
+1220 45 Ben
+50 1454 Rita
+12 24 ben
+40 26 beni
+40 32 Noam
+5512 34 Roi
+10 85 ben
+60 22 Roi
+605 252 Roi
+30 1342 genia
+10 21 ben
+32789 2738949 elza

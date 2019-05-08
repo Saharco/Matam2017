@@ -1,0 +1,54 @@
+
+Test results for 206824088-209320332
+
+test #1   : success
+test #2   : success
+test #3   : success
+test #4   : success
+test #5   : success
+test #6   : success
+test #7   : success
+test #8   : success
+test #9   : success
+test #10  : success
+test #11  : success
+test #12  : success
+test #13  : success
+test #14  : success
+test #15  : success
+test #16  : success
+test #17  : wrong output, -2
+test #18  : success
+test #19  : success
+test #20  : success
+test #21  : success
+test #22  : success
+test #23  : success
+test #24  : success
+test #25  : success
+test #26  : success
+test #27  : success
+test #28  : success
+test #29  : success
+test #30  : success
+test #31  : success
+test #32  : success
+test #33  : success
+test #34  : success
+test #35  : wrong output, -3
+test #36  : success
+test #37  : success
+test #38  : success
+test #39  : success
+test #40  : success
+test #41  : success
+test #42  : success
+test #43  : success
+test #44  : success
+
+Automatic check: -5
+
+Automatic memory leaks check: 0
+Manual check   : -0 (manual submission has not been received)
+----------------
+Final grade    : 95
