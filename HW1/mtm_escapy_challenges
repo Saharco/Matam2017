@@ -1,0 +1,15 @@
+#!/bin/bash
+threshold=${1}
+files="$(ls -l)"
+for name in ${*:2} ; do
+	echo "${name}"
+	for room in $files ; do
+		if [[ -d $room ]] ; then
+			visits=$(visitor_for_room $room $name | wc -l)
+			if (( visits > 0 )) ; then
+				results=$(room_challenges $room $threshold | grep $name | cut -d" " -f2-3)
+				echo -e "\t$room: $results"
+			fi
+		fi
+	done
+done

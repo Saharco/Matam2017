@@ -1,0 +1,17 @@
+#!/bin/bash
+#This script gets the name of an escape room in the MTM-ESCAPY network
+#with an optional variable <VISITORS_AMOUNT>. If the required visitors'
+#amount is entered and is smaller than the total amount of visitors in
+#that room - displays the last VISITORS_AMOUNT visitors in that room.
+#Otherwise, displays all of the visitors in the room. The print order
+#is determined by the ID of each visitor in the following way: visitors
+#with a bigger ID will be printed first, and then the other visitors'
+#names will be printed in descending order
+escape_room="${1}"
+total_visitors=$(sort -k3 ${escape_room}/visitors.txt | uniq -2 | wc -l)
+req_visitors=${2}
+if (( req_visitors==0 || req_visitors>total_visitors )) ; then
+	sort -k3 ${escape_room}/visitors.txt | uniq -2 | sort -nrk2 | cut -d" " -f3
+else
+	sort -k3 ${escape_room}/visitors.txt | uniq -2 | sort -nrk2 | cut -d" " -f3 | head -n${req_visitors}
+fi
